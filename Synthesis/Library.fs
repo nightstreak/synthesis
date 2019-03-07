@@ -1,7 +1,8 @@
 ﻿module Synthesis
 
-let abelar _ =
-    failwith "Not implemented"
+let abelar x =
+    x > 12 && x < 3097 && x%12=0
+    
 
 let area _ _ =
     failwith "Not implemented"
