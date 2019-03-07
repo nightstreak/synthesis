@@ -4,23 +4,37 @@ let abelar x =
     x > 12 && x < 3097 && x%12=0
     
 
-let area _ _ =
-    failwith "Not implemented"
+let area a b = 
+    match a >= 0.0 && b >= 0.0 with
+    | false -> failwith "Negative Area"
+    |_ -> (a*b)/2.0
+        
 
-let zollo _ =
-    failwith "Not implemented"
+let zollo num =
+    match num < 0 with
+    |true -> (*) num -1
+    | _ -> num*2
 
-let min _ _ =
-    failwith "Not implemented"
+let min woo moo =
+    match woo > moo with
+    | true -> moo
+    |_ -> woo
 
-let max _ _ =
-    failwith "Not implemented"
+let max woop mop =
+    match woop > mop with
+    |true -> woop
+    |_ -> mop
 
-let ofTime _ _ _ =
-    failwith "Not implemented"
+let ofTime x y z =
+    (x*3600)+(y*60)+z
 
-let toTime _ =
-    failwith "Not implemented"
+let toTime seconds =
+    match seconds > 0 with
+    |true -> let hours = seconds / 3600
+             let minutes = (seconds - (hours * 3600))/60
+             let seconds = (seconds-(hours *3600)-(minutes *60))
+             hours, minutes,seconds
+    |_-> 0,0,0        
 
 let digits _ =
     failwith "Not implemented"
