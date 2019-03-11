@@ -37,15 +37,17 @@ let toTime seconds =
     |_-> 0,0,0        
 
 let digits a =
-    let rec count n =
-        match n > -10 && n < 10 with
-        |true -> 1
-        |_->
-            match n/10 > 0 with
-            |
+    let rec count n acc =
+        match (n/10)=0 with
+        |true -> acc
+        |false-> count (n/10) (acc+1)
+    count a 1
+         
            
-let minmax _ =
-    failwith "Not implemented"
+let minmax (a,b,c,d) =
+    let max1 = max (max a b) (max c d)
+    let min1 = min (min a b) (min c d)
+    (min1,max1)
 
 let isLeap _ =
     failwith "Not implemented"
