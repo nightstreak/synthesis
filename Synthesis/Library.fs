@@ -36,9 +36,14 @@ let toTime seconds =
              hours, minutes,seconds
     |_-> 0,0,0        
 
-let digits _ =
-    failwith "Not implemented"
-
+let digits a =
+    let rec count n =
+        match n > -10 && n < 10 with
+        |true -> 1
+        |_->
+            match n/10 > 0 with
+            |
+           
 let minmax _ =
     failwith "Not implemented"
 
