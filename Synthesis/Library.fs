@@ -49,8 +49,15 @@ let minmax (a,b,c,d) =
     let min1 = min (min a b) (min c d)
     (min1,max1)
 
-let isLeap _ =
-    failwith "Not implemented"
+let isLeap  n =
+    match n<1582  with
+    |true -> failwith "Not possible"
+    |_->
+        match (n%4 = 0 && n%100 <> 0) || (n%4 = 0 && n%400 = 0) with
+        |true -> true
+        |_-> false
+        
+       
 
 let month _ =
     failwith "Not implemented"
